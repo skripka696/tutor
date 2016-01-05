@@ -1,0 +1,22 @@
+{% extends 'polls/base.html' %}
+{% load i18n %}
+{% block content%}
+
+
+<div class="table">
+    <div class="toolbar">
+        <div class="content">
+<ul>
+    <h1>{{ question.question_text }}</h1>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        {% endfor %}
+</ul>
+        </div>
+    </div>
+</div>
+<a href="{% url 'polls:detail' question.pk %}">{% trans "Vote again?" %}</a>
+
+
+
+{% endblock %}

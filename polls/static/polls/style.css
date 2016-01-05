@@ -1,0 +1,61 @@
+html{
+    height: 100%;
+}
+h1{
+    color: white;
+    font-size: 40px;
+}
+li  {
+    color: white;
+    font-size: 40px;
+ }
+
+body {
+
+    height: 100%;
+    background: white url("images/1.jpg");
+    background-size: 100%;
+}
+
+.table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.toolbar{
+
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.ul {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.li {
+    display: block;
+    color: white;
+}
+
+.content{
+    /*width: 20%;*/
+    display: inline-block;
+    text-align: left;
+}
+
+.choice{
+    color: white;
+    font-size: 20px;
+}
+
+.button{
+    margin: 20px;
+    border-radius:  5px;
+    font-size: 20px;
+    float: left;
+    /*background: -webkit-gradient(linear, 10 10, 10 100%, from(#00BBD6), to(#EBFFFF));*/
+}
