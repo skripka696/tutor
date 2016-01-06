@@ -59,3 +59,6 @@ body {
     float: left;
     /*background: -webkit-gradient(linear, 10 10, 10 100%, from(#00BBD6), to(#EBFFFF));*/
 }
+.nav{
+    font-size: 20px;
+}

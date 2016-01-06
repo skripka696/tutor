@@ -2,6 +2,29 @@
 {% load i18n %}
 {% block content%}
 
+<!--<form action="{% url 'set_language' %}" method="post">{% csrf_token %}-->
+    <!--<input name="next" type="hidden" value="{{ redirect_to }}" />-->
+    <!--{% get_current_language as LANGUAGE_CODE %}-->
+    <!--{% get_available_languages as LANGUAGES %}-->
+    <!--{% get_language_info_list for LANGUAGES as languages %}-->
+    <!--{% for language in languages %}-->
+        <!--<input type="submit" name="language" value="{{ language.code }}" />-->
+
+    <!--{% endfor %}-->
+    <!--&lt;!&ndash;<select name="language">&ndash;&gt;-->
+        <!--&lt;!&ndash;{% get_current_language as LANGUAGE_CODE %}&ndash;&gt;-->
+        <!--&lt;!&ndash;{% get_available_languages as LANGUAGES %}&ndash;&gt;-->
+        <!--&lt;!&ndash;{% get_language_info_list for LANGUAGES as languages %}&ndash;&gt;-->
+        <!--&lt;!&ndash;{% for language in languages %}&ndash;&gt;-->
+            <!--&lt;!&ndash;{{ language.name_local }} ({{ language.code }})&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>&ndash;&gt;-->
+                <!--&lt;!&ndash;{{ language.name_local }} ({{ language.code }})&ndash;&gt;-->
+            <!--&lt;!&ndash;</option>&ndash;&gt;-->
+        <!--&lt;!&ndash;{% endfor %}&ndash;&gt;-->
+    <!--&lt;!&ndash;</select>&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="submit" value="Go" />&ndash;&gt;-->
+<!--</form>-->
+
 
 <div class="table">
     <div class="toolbar">
@@ -12,10 +35,11 @@
             <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
         {% endfor %}
 </ul>
+            <a class="choice" href="{% url 'polls:detail' question.pk %}">{% trans "Vote again?" %}</a>
         </div>
     </div>
 </div>
-<a href="{% url 'polls:detail' question.pk %}">{% trans "Vote again?" %}</a>
+
 
 
 

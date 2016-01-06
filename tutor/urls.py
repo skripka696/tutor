@@ -21,10 +21,13 @@ from django.utils.translation import ugettext_lazy as _
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^statistic/', include('statistic.urls', namespace='statistics')),
     # url(r'^polls/', include('polls.urls', namespace="polls")),
 ]
 
 urlpatterns += i18n_patterns(
     # url(r'^admin/', admin.site.urls),
     url(_(r'^polls/'), include('polls.urls', namespace='polls')),
+
 )
