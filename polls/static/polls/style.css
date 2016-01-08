@@ -5,10 +5,6 @@ h1{
     color: white;
     font-size: 40px;
 }
-li  {
-    color: white;
-    font-size: 40px;
- }
 
 body {
 
@@ -18,7 +14,8 @@ body {
 }
 
 .table {
-    display: table;
+    discolor: white;
+    font-size: 40px;play: table;
     height: 100%;
     width: 100%;
 }
@@ -39,6 +36,7 @@ body {
 .li {
     display: block;
     color: white;
+    font-size: 40px;
 }
 
 .content{
@@ -59,6 +57,11 @@ body {
     float: left;
     /*background: -webkit-gradient(linear, 10 10, 10 100%, from(#00BBD6), to(#EBFFFF));*/
 }
-.nav{
-    font-size: 20px;
+
+.lan{
+    margin: 15px;
+}
+
+.dropdown-toggle{
+
 }
