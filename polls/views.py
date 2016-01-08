@@ -7,6 +7,14 @@ from django.views.generic import ListView, DetailView
 from django.template import RequestContext, loader
 
 
+class Base(object):
+
+    def get_context_data(self, **kwargs):
+        context = super(Base, self).get_context_data(**kwargs)
+        context['latest_question_list'] = Question.objects.order_by("-pub_date")[:5]
+        return context
+
+
 class IndexView(ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
@@ -15,12 +23,12 @@ class IndexView(ListView):
         return Question.objects.order_by("-pub_date")[:5]
 
 
-class DetailView(DetailView):
+class Detail_View(Base, DetailView):
     model = Question
     template_name = 'polls/detail.html'
 
 
-class ResultView(DetailView):
+class ResultView(Base, DetailView):
     model = Question
     template_name = 'polls/result.html'
 
